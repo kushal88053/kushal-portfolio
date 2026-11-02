@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { ArrowUp, Code2, Terminal, Heart } from "lucide-react";
 import { GithubIcon, LinkedinIcon, CodeChefIcon, CodeforcesIcon } from "@/components/Icons";
 import { personalInfo } from "@/data/portfolioData";
@@ -15,8 +16,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center space-x-3">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center font-mono font-bold text-slate-950 text-base">
-              KP
+            <div className="relative h-10 w-10 rounded-xl overflow-hidden border border-cyan-500/40 shadow bg-slate-900 shrink-0">
+              <Image
+                src="/profile.png"
+                alt="Kushal Patel"
+                fill
+                className="object-cover object-top"
+              />
             </div>
             <div>
               <p className="font-bold text-white text-sm">

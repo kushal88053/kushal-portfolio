@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import {
   X,
   Printer,
@@ -64,7 +65,15 @@ export default function ResumeModal({
         {/* Printable & Scrollable Resume Body */}
         <div className="overflow-y-auto p-6 sm:p-10 space-y-8 bg-slate-950 text-slate-200 font-sans print:bg-white print:text-black">
           {/* Header */}
-          <div className="text-center border-b border-slate-800 pb-6 print:border-black">
+          <div className="text-center border-b border-slate-800 pb-6 print:border-black flex flex-col items-center">
+            <div className="relative h-20 w-20 rounded-full overflow-hidden border-2 border-cyan-500/50 mb-3 shadow-lg bg-slate-900">
+              <Image
+                src="/profile.png"
+                alt="Kushal Patel"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
             <h1 className="text-3xl font-extrabold text-white print:text-black tracking-tight">
               {personalInfo.name.toUpperCase()}
             </h1>

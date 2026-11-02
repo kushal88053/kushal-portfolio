@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Code2,
   Terminal,
@@ -48,8 +49,13 @@ export default function Navbar({ onOpenResume }: { onOpenResume?: () => void }) 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo / Brand */}
         <Link href="/" className="flex items-center space-x-3 group">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center font-mono font-bold text-slate-950 text-lg shadow-md group-hover:scale-105 transition-transform">
-            KP
+          <div className="relative h-10 w-10 rounded-xl overflow-hidden border border-cyan-500/40 shadow-md group-hover:scale-105 transition-transform bg-slate-900 shrink-0">
+            <Image
+              src="/profile.png"
+              alt="Kushal Patel"
+              fill
+              className="object-cover object-top"
+            />
           </div>
           <div>
             <div className="font-bold text-white tracking-tight flex items-center space-x-2">
