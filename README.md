@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kushal Patel - Portfolio Website
 
-## Getting Started
+A modern, high-performance developer portfolio built with **Next.js (App Router)**, **React**, **TypeScript**, and **Tailwind CSS**. Optimized for seamless deployment on **Vercel**.
 
-First, run the development server:
+## 🌟 Key Features
+
+1. **Interactive Formative Video Walkthrough**:
+   - Dynamic 5-chapter architecture walkthrough showcasing:
+     - *Chapter 1*: Engineering Overview (Distributed Systems, Java Spring Boot, Kafka, AWS, Kubernetes).
+     - *Chapter 2*: 95%+ API Latency Reduction at VentoMotors (ActiveMQ + Redis asynchronous pipeline).
+     - *Chapter 3*: Kyosk High-Throughput Kafka (10k+ msgs/day) & 99.9% Telecom Recharge Microservice.
+     - *Chapter 4*: SaaS Email Infrastructure with Kubernetes Horizontal Pod Autoscaling (HPA) handling 100k+ emails/day.
+     - *Chapter 5*: Algorithmic Mastery (1,000+ solved DSA challenges, CodeChef 1700, Global Rank 77 Cook-Off).
+   - Features real-time animated architecture canvas, dynamic metrics, AI voice narration support, subtitles, playback speed control (1x/1.25x/1.5x), and theater mode.
+
+2. **Full Resume Details**:
+   - **Experience**: Gruslabs Software Solutions (VentoMotors & Kyosk) and Walkover Web Solutions (MSG91 & ViaSocket).
+   - **Featured Projects**: Email SaaS (K8s HPA, RabbitMQ, AWS SES), VentoMotors Real-Time Factory Analytics, Kyosk Telecom Engine, Automation Engine.
+   - **Skills Matrix**: Filterable matrix with search (Languages, Backend Frameworks, Event Streaming, Cloud & DevOps, Databases, Testing Tools).
+   - **Competitive Programming Showcase**: CodeChef, Codeforces, LeetCode, GitHub with domain breakdown.
+   - **Education**: Master of Computer Applications (MCA) & Bachelor of Computer Applications (BCA).
+   - **Instant Resume Viewer & Print**: Modal with one-click "Print / Save PDF" view.
+
+3. **Links & Contact**:
+   - LinkedIn: [https://www.linkedin.com/in/kushal88053/](https://www.linkedin.com/in/kushal88053/)
+   - GitHub: [https://github.com/kushal88053](https://github.com/kushal88053)
+   - CodeChef: [https://www.codechef.com/users/kushal88053](https://www.codechef.com/users/kushal88053)
+   - Codeforces: [https://codeforces.com/profile/kushal88053](https://codeforces.com/profile/kushal88053)
+   - Email: `kp88053@gmail.com`
+   - Phone: `+91-7024400235`
+
+---
+
+## 🚀 How to Run Locally
 
 ```bash
+# Navigate to project directory
+cd kushal-portfolio
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000 in your browser
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚢 How to Deploy to Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Option 1: Via GitHub & Vercel Dashboard (Recommended)
 
-## Learn More
+1. Create a new repository on your GitHub account (e.g. `kushal-portfolio`).
+2. Link and push your local repository:
+   ```bash
+   cd kushal-portfolio
+   git remote add origin https://github.com/kushal88053/kushal-portfolio.git
+   git branch -M main
+   git push -u origin main
+   ```
+3. Go to [vercel.com](https://vercel.com) and log in with your GitHub account.
+4. Click **"Add New Project"** and select `kushal-portfolio`.
+5. Click **"Deploy"**. Vercel will automatically detect Next.js and build your site.
 
-To learn more about Next.js, take a look at the following resources:
+### Option 2: Deploy directly via Vercel CLI
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+cd kushal-portfolio
+npx vercel
+```
