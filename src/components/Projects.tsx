@@ -22,7 +22,7 @@ import {
   Terminal,
 } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
-import { featuredProjects, ProjectItem } from "@/data/portfolioData";
+import { featuredProjects, ProjectItem, personalInfo } from "@/data/portfolioData";
 
 export default function Projects() {
   const [filter, setFilter] = useState<string>("All");
@@ -194,6 +194,35 @@ export default function Projects() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Many More on GitHub CTA Button */}
+        <div className="mt-14 text-center">
+          <div className="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800/90 max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 hover:border-cyan-500/30 transition-all">
+            <div className="text-left">
+              <div className="flex items-center space-x-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-1">
+                <GithubIcon className="h-4 w-4" />
+                <span>Open Source Repositories & Experiments</span>
+              </div>
+              <h4 className="text-lg font-bold text-white">
+                Looking for many more projects?
+              </h4>
+              <p className="text-xs text-slate-400 mt-1 max-w-md">
+                Explore additional distributed system prototypes, competitive coding solutions, microservices, and experiments on my GitHub profile.
+              </p>
+            </div>
+
+            <a
+              href={personalInfo.socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 group flex items-center space-x-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 text-xs sm:text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/25 hover:brightness-110 active:scale-95 transition-all"
+            >
+              <GithubIcon className="h-4 w-4 text-slate-950" />
+              <span>Many More on GitHub</span>
+              <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+          </div>
         </div>
       </div>
 
