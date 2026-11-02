@@ -2,7 +2,7 @@ export interface ProjectItem {
   id: string;
   title: string;
   subtitle: string;
-  category: "Full-Stack" | "Backend / SaaS" | "Distributed Systems" | "DevOps / Cloud";
+  category: "Full-Stack" | "Core Backend" | "Workflow Automation";
   description: string;
   highlights: string[];
   metrics?: { label: string; value: string }[];
@@ -123,7 +123,7 @@ export const experiences: ExperienceItem[] = [
     projects: [
       {
         name: "VentoMotors (Industrial IoT & Service Platform)",
-        badge: "Production IoT & Analytics",
+        badge: "Full-Stack Project (IoT & Analytics)",
         details: [
           "Full-Stack Production Dashboard: Engineered a real-time factory dashboard with React.js frontend using IndexedDB for offline-capable local state and Java / Spring Boot RESTful APIs for defect tracking, assembly line metrics, unpacking, PDP, and hourly throughput.",
           "Dashboard API Optimization: Re-engineered analytics APIs by designing an asynchronous processing pipeline with ActiveMQ and Redis, queue-processing factory records and caching calculated metrics so queries load in 2-5 seconds instead of 30-40 seconds (95%+ speedup).",
@@ -147,7 +147,7 @@ export const experiences: ExperienceItem[] = [
       },
       {
         name: "Kyosk (B2B E-Commerce & Telecom Top-Up)",
-        badge: "High-Throughput Microservices",
+        badge: "Core Backend Project (Kafka & Telecom)",
         details: [
           "Platform Summary Service: Architected an automated Spring Boot reporting service generating daily administrative summaries across user growth, zonal sales volumes, airtime orders, and loan metrics.",
           "Notification Service: Managed high-throughput Apache Kafka consumer groups for asynchronous, reliable delivery of 10k+ daily Email, WhatsApp (Twilio API), and SMS alerts.",
@@ -202,75 +202,78 @@ export const experiences: ExperienceItem[] = [
 
 export const featuredProjects: ProjectItem[] = [
   {
-    id: "email-saas",
-    title: "Email Sender as a Service (SaaS)",
-    subtitle: "High-Volume Transactional & Marketing Email Infrastructure",
-    category: "Backend / SaaS",
+    id: "ventomotors-dashboard",
+    title: "VentoMotors Full-Stack IoT & Factory Platform",
+    subtitle: "React.js Frontend (IndexedDB), Spring Boot APIs, ActiveMQ & Redis Pipeline",
+    category: "Full-Stack",
     description:
-      "A production-grade distributed email delivery platform built with Next.js, RabbitMQ pub/sub message brokers, background worker nodes, and AWS SES, managed via Docker & Kubernetes.",
+      "An end-to-end full-stack industrial IoT factory platform. Features a React.js client utilizing IndexedDB for offline-first local state, high-performance Spring Boot REST APIs, sub-second analytics via ActiveMQ and Redis, and live defect video streaming with Node.js WebSockets.",
     highlights: [
-      "Designed an asynchronous background processing pipeline using Next.js application layer and RabbitMQ pub/sub queues with worker nodes.",
-      "Integrated AWS SES for ultra-reliable transactional and marketing email delivery with bounce and delivery webhook tracking.",
-      "Authored custom Kubernetes manifests to deploy and coordinate Dockerized microservices (Redis, RabbitMQ, and MongoDB).",
-      "Configured Kubernetes Horizontal Pod Autoscaling (HPA) to seamlessly sustain 100,000+ emails/day under peak load spikes.",
+      "Engineered full-stack real-time factory dashboard with React.js frontend using IndexedDB for local offline state and Java / Spring Boot RESTful APIs.",
+      "Transformed slow analytics queries from 30-40s to 2-5s (95%+ speedup) using ActiveMQ event queues and Redis caching.",
+      "Built live defect video streaming and real-time chat between technicians and QA using Node.js, WebSockets, and Redis Pub/Sub.",
+      "Developed the My Vento digital service book module and automated billing workflows via Zoho Invoice API (-90% manual effort).",
+      "Migrated infrastructure to AWS EC2 & RDS with automated CodePipeline CI/CD to ECS.",
     ],
     metrics: [
-      { label: "Throughput", value: "100k+ emails/day" },
-      { label: "Architecture", value: "K8s HPA Autoscaling" },
-      { label: "Queuing", value: "RabbitMQ Pub/Sub" },
-      { label: "Provider", value: "AWS SES" },
+      { label: "Architecture", value: "Full-Stack + IoT" },
+      { label: "Latency Speedup", value: "95%+ (30s → 2s)" },
+      { label: "Frontend", value: "React + IndexedDB" },
+      { label: "Cloud & CI/CD", value: "AWS ECS + CodePipeline" },
     ],
-    tags: ["Next.js", "RabbitMQ", "Redis", "Kubernetes", "MongoDB", "AWS SES", "Docker"],
+    tags: ["React.js", "IndexedDB", "Java", "Spring Boot", "ActiveMQ", "Redis", "WebSockets", "Node.js", "AWS ECS", "Docker"],
+  },
+  {
+    id: "email-saas",
+    title: "Email Sender as a Service (Full-Stack SaaS)",
+    subtitle: "Next.js Application Layer, RabbitMQ Pub/Sub Workers & Kubernetes HPA",
+    category: "Full-Stack",
+    description:
+      "A complete full-stack SaaS platform built with Next.js for the modern web application interface, paired with asynchronous background worker nodes, RabbitMQ pub/sub queues, and AWS SES, orchestrated via Docker & Kubernetes.",
+    highlights: [
+      "Designed full-stack application architecture using Next.js for frontend user dashboards and application logic with asynchronous backend queuing.",
+      "Configured RabbitMQ pub/sub message brokers with worker nodes and Redis caching for resilient background email dispatch.",
+      "Integrated AWS SES for ultra-reliable transactional and marketing email delivery with bounce and delivery webhook tracking.",
+      "Authored custom Kubernetes manifests with Horizontal Pod Autoscaling (HPA) to seamlessly sustain 100,000+ emails/day during peak traffic bursts.",
+    ],
+    metrics: [
+      { label: "Type", value: "Full-Stack SaaS" },
+      { label: "Throughput", value: "100k+ emails/day" },
+      { label: "Frontend/App", value: "Next.js" },
+      { label: "Autoscaling", value: "Kubernetes HPA" },
+    ],
+    tags: ["Next.js", "React", "RabbitMQ", "Redis", "Kubernetes", "MongoDB", "AWS SES", "Docker"],
     links: {
       github: "https://github.com/kushal88053",
     },
   },
   {
-    id: "ventomotors-dashboard",
-    title: "VentoMotors Real-Time Factory Analytics",
-    subtitle: "Industrial IoT Dashboard & Async Analytics Pipeline",
-    category: "Distributed Systems",
-    description:
-      "Enterprise industrial assembly and defect tracking platform with sub-second analytics, Live Defect Video streaming, and WebSockets.",
-    highlights: [
-      "Transformed slow analytics queries from 30-40s to 2-5s (95%+ speedup) using ActiveMQ event queues and Redis caching.",
-      "Implemented live video stream sharing and instant technician chat using Node.js, WebSockets, and Redis Pub/Sub.",
-      "Connected React.js client with IndexedDB local caching for zero-data-loss factory floor operation.",
-      "Migrated infrastructure to AWS EC2 & RDS with automated CodePipeline CI/CD to ECS.",
-    ],
-    metrics: [
-      { label: "Latency Improvement", value: "95%+" },
-      { label: "Query Time", value: "30s → 2s" },
-      { label: "Protocol", value: "WebSockets + Redis" },
-      { label: "Cloud", value: "AWS EC2/ECS/RDS" },
-    ],
-    tags: ["Java", "Spring Boot", "ActiveMQ", "Redis", "React.js", "WebSockets", "AWS ECS", "Docker"],
-  },
-  {
     id: "kyosk-telecom",
-    title: "Kyosk B2B Telecom Recharge Microservice",
-    subtitle: "High-Volume Fault-Tolerant Payment Engine",
-    category: "Full-Stack",
+    title: "Kyosk B2B Core Backend Microservices",
+    subtitle: "High-Throughput Kafka Streams, Telecom Recharge Engine & Elasticsearch",
+    category: "Core Backend",
     description:
-      "Mission-critical fintech recharge engine supporting telecom giants across Africa (Vodacom, MTN Group, Orange, Airtel, Globacom) with 99.9% uptime.",
+      "Mission-critical core backend microservices for the Kyosk B2B e-commerce platform. Handles high-throughput Apache Kafka event streams, automated administrative reporting, dynamic Elasticsearch catalogs, and 99.9% reliable telecom recharge transactions across Africa.",
     highlights: [
-      "Engineered fault-tolerant message handling and idempotent transaction states to prevent duplicate top-up debits.",
-      "Managed Kafka event streams delivering 10,000+ daily notifications across Email, WhatsApp (Twilio), and SMS.",
-      "Integrated Elasticsearch for dynamic, area-specific product catalog searching and warehouse inventory indexing.",
+      "Engineered fault-tolerant backend recharge microservice supporting high-volume payment and top-up transactions for Vodacom, MTN Group, Orange, Globacom, and Airtel with 99.9% reliability.",
+      "Managed high-throughput Apache Kafka consumer groups for asynchronous, reliable delivery of 10,000+ daily Email, WhatsApp (Twilio), and SMS notifications.",
+      "Architected automated Spring Boot platform reporting service generating daily administrative summaries across zonal sales, user growth, airtime, and loans.",
+      "Built dynamic area-specific catalog microservices using Elasticsearch to index location listings and real-time multi-warehouse inventory.",
+      "Provided 24/7 backend production support debugging asynchronous message flows and distributed transaction states.",
     ],
     metrics: [
-      { label: "Reliability", value: "99.9%" },
-      { label: "Notifications", value: "10k+ / day" },
-      { label: "Telecom Partners", value: "5 Major Telcos" },
-      { label: "Search Engine", value: "Elasticsearch" },
+      { label: "Role", value: "Core Backend SDE" },
+      { label: "Reliability", value: "99.9% SLA" },
+      { label: "Kafka Events", value: "10k+ msgs / day" },
+      { label: "Telco Partners", value: "Vodacom, MTN, Orange" },
     ],
-    tags: ["Spring Boot", "Apache Kafka", "Elasticsearch", "PostgreSQL", "Twilio API", "Microservices"],
+    tags: ["Spring Boot", "Apache Kafka", "Elasticsearch", "PostgreSQL", "Twilio API", "Microservices", "Distributed Transactions"],
   },
   {
     id: "viasocket-plugins",
     title: "Automation Engine & 100+ Workflow Plugins",
     subtitle: "Extensible Integration Hub (ViaSocket)",
-    category: "Backend / SaaS",
+    category: "Workflow Automation",
     description:
       "Developed an extensive library of 100+ integration plugins connecting third-party platforms into automated workflows.",
     highlights: [
@@ -395,15 +398,15 @@ export const formativeVideoChapters: VideoChapter[] = [
     id: 2,
     timeStart: 10,
     duration: 12,
-    title: "2. 95% Latency Reduction at VentoMotors",
-    badge: "ActiveMQ + Redis Cache",
+    title: "2. VentoMotors Full-Stack IoT Platform (95% Speedup)",
+    badge: "Full-Stack Project",
     narration:
-      "At Gruslabs for the VentoMotors platform, heavy factory analytics queries took 30 to 40 seconds to process. I re-architected the pipeline into an asynchronous queue with ActiveMQ and Redis caching, slashing response times to just 2 to 5 seconds—a 95% performance improvement.",
+      "For VentoMotors, my flagship full-stack project, I engineered a real-time factory dashboard using React.js with IndexedDB on the frontend, backed by Spring Boot REST APIs. I solved heavy 30 to 40 second analytics queries with an asynchronous ActiveMQ and Redis caching pipeline, slashing response time to 2 to 5 seconds—a 95% speedup.",
     visualType: "optimization",
     metrics: [
-      { label: "Before Optimization", value: "30 - 40s" },
-      { label: "After Optimization", value: "2 - 5s" },
-      { label: "Speedup", value: "95% Faster" },
+      { label: "Type", value: "Full-Stack System" },
+      { label: "Query Speedup", value: "30-40s → 2-5s (95%)" },
+      { label: "Stack", value: "React + Spring + Redis" },
     ],
     codeSnippet: `// Asynchronous ActiveMQ & Redis Pipeline
 @JmsListener(destination = "factory.analytics.queue")
@@ -411,20 +414,20 @@ public void processFactoryMetrics(FactoryRecord record) {
     CalculatedMetrics metrics = engine.compute(record);
     redisTemplate.opsForValue().set("metrics:" + record.getId(), metrics, 15, TimeUnit.MINUTES);
 }`,
-    diagramTitle: "ActiveMQ -> Worker Pipeline -> Redis In-Memory Cache",
+    diagramTitle: "React (IndexedDB) -> Spring Boot -> ActiveMQ -> Redis Cache",
   },
   {
     id: 3,
     timeStart: 22,
     duration: 12,
-    title: "3. Kyosk High-Throughput Kafka & Telecom Engine",
-    badge: "99.9% Uptime",
+    title: "3. Kyosk Core Backend Microservices & Telecom Engine",
+    badge: "Core Backend Project",
     narration:
-      "In the Kyosk B2B e-commerce platform, I managed Kafka event streaming clusters delivering over 10,000 daily multi-channel notifications, and engineered telecom recharge microservices for Vodacom, MTN, and Orange with 99.9% reliability.",
+      "Kyosk is my core backend microservices platform. I architected high-throughput Apache Kafka clusters for asynchronous delivery of 10,000+ daily multi-channel notifications, and engineered fault-tolerant recharge microservices with 99.9% uptime for Vodacom, MTN Group, Orange, Globacom, and Airtel.",
     visualType: "kafka",
     metrics: [
+      { label: "Type", value: "Core Backend Engine" },
       { label: "Daily Kafka Events", value: "10,000+ msgs" },
-      { label: "Telecom Partners", value: "Vodacom, MTN, Orange" },
       { label: "System Availability", value: "99.9% SLA" },
     ],
     codeSnippet: `// High-Throughput Kafka Notification Consumer
@@ -432,21 +435,21 @@ public void processFactoryMetrics(FactoryRecord record) {
 public void handleNotification(NotificationEvent event) {
     notificationRouter.dispatch(event); // WhatsApp Twilio, SES, SMS
 }`,
-    diagramTitle: "Kafka Topics -> Consumer Groups -> Multi-Channel Gateways",
+    diagramTitle: "Core Backend: Kafka Topics -> Consumer Groups -> Telecom Gateways",
   },
   {
     id: 4,
     timeStart: 34,
     duration: 12,
-    title: "4. Cloud SaaS & Kubernetes Autoscaling",
-    badge: "100k+ Emails / Day",
+    title: "4. Full-Stack SaaS Email Platform & Kubernetes HPA",
+    badge: "Full-Stack SaaS",
     narration:
-      "I engineered a SaaS email platform using Next.js, RabbitMQ pub/sub worker nodes, and AWS SES. By authoring custom Kubernetes manifests and configuring Horizontal Pod Autoscaling (HPA), the system smoothly scales to 100,000+ daily emails under peak load.",
+      "My messaging SaaS is an end-to-end full-stack platform: combining a Next.js application dashboard with asynchronous RabbitMQ pub/sub workers and AWS SES. Managed with Kubernetes Horizontal Pod Autoscaling, the system smoothly delivers over 100,000 emails per day.",
     visualType: "kubernetes",
     metrics: [
+      { label: "Type", value: "Full-Stack SaaS" },
       { label: "Peak Capacity", value: "100,000+ / day" },
-      { label: "Autoscaling", value: "Kubernetes HPA" },
-      { label: "Cloud Provider", value: "AWS SES + ECR" },
+      { label: "App & Infra", value: "Next.js + K8s HPA" },
     ],
     codeSnippet: `apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler

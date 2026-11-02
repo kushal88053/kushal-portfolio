@@ -54,11 +54,11 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
 
           <p className="mt-4 text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-300 tracking-tight">
             Software Development Engineer &bull;{" "}
-            <span className="text-cyan-400 font-mono">Distributed Systems</span>
+            <span className="text-cyan-400 font-mono">Full-Stack & Core Backend Architect</span>
           </p>
 
           <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
-            Specializing in high-throughput microservices, sub-second asynchronous event pipelines, and resilient cloud architectures. Proven track record at <strong className="text-white">Gruslabs</strong> cutting API latency by <span className="text-emerald-400 font-semibold font-mono">95%+</span> (30s down to 2s), orchestrating <span className="text-cyan-400 font-semibold font-mono">100k+</span> daily messages across Kafka & RabbitMQ, and deploying scalable Kubernetes platforms on AWS.
+            Specializing in full-stack platforms and high-throughput core backend microservices. Proven track record architecting full-stack systems like <strong className="text-white">VentoMotors</strong> (React, IndexedDB, Spring Boot, ActiveMQ 95% latency speedup) and the <strong className="text-white">Email Sender SaaS</strong> (Next.js & K8s HPA), alongside mission-critical core backend infrastructure for <strong className="text-white">Kyosk</strong> (Kafka clusters, 10k+ daily events, 99.9% telecom payment uptime).
           </p>
         </div>
 

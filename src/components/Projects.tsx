@@ -17,7 +17,7 @@ import { featuredProjects, ProjectItem } from "@/data/portfolioData";
 export default function Projects() {
   const [filter, setFilter] = useState<string>("All");
 
-  const categories = ["All", "Backend / SaaS", "Distributed Systems", "Full-Stack"];
+  const categories = ["All", "Full-Stack", "Core Backend", "Workflow Automation"];
 
   const filteredProjects =
     filter === "All"

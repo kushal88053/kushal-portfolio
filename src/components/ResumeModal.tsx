@@ -167,7 +167,7 @@ export default function ResumeModal({
                     {p.title}
                   </span>
                   <span className="text-[11px] font-mono text-cyan-400 print:text-gray-600">
-                    {p.tags.slice(0, 5).join(", ")}
+                    [{p.category}] &bull; {p.tags.slice(0, 4).join(", ")}
                   </span>
                 </div>
                 <ul className="list-disc list-inside text-xs text-slate-300 print:text-gray-800 leading-relaxed mt-1 pl-1">
