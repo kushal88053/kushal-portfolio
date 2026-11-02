@@ -12,6 +12,22 @@ export interface ProjectItem {
     live?: string;
     demo?: string;
   };
+  readmeContent?: {
+    overview: string;
+    features: { title: string; desc: string }[];
+    backendArchitecture: {
+      redis: string;
+      mongodb: string;
+      s3: string;
+      smtp: string;
+      scaling: string;
+    };
+    runLocallyInstructions?: {
+      server: string;
+      frontend: string;
+    };
+    references?: { name: string; url: string }[];
+  };
 }
 
 export interface ExperienceItem {
@@ -202,6 +218,64 @@ export const experiences: ExperienceItem[] = [
 
 export const featuredProjects: ProjectItem[] = [
   {
+    id: "video-conference",
+    title: "VideoConfrence (Real-Time WebRTC Engine)",
+    subtitle: "Real-Time Video, Audio, Collaborative Whiteboard & Redis Scaled Socket.IO",
+    category: "Full-Stack",
+    description:
+      "An open-source real-time video conference web application engineered to understand and replicate how Google Meet and Zoom deliver low-latency streams. Features WebRTC audio/video sharing, interactive whiteboard with mathematical graph plotting, screen sharing, live chat, and horizontal scaling via Redis Socket.IO adapter.",
+    highlights: [
+      "Engineered real-time low-latency audio/video streaming and screen sharing utilizing WebRTC and Mediasoup architecture.",
+      "Integrated Redis as a Socket.IO adapter to enable horizontal scaling and multi-instance session synchronization (userId, socketId, active status).",
+      "Built a collaborative whiteboard with a mathematical graph plotter allowing real-time interactive annotations and diagramming.",
+      "Configured MongoDB for structured chat persistence and user profiles, paired with AWS S3 buckets for meeting file uploads.",
+      "Integrated Nodemailer SMTP service for automated meeting invitations and transactional email notifications.",
+    ],
+    metrics: [
+      { label: "Type", value: "Full-Stack WebRTC" },
+      { label: "Media Engine", value: "WebRTC / Mediasoup" },
+      { label: "Scaling", value: "Redis Socket Adapter" },
+      { label: "Cloud & DB", value: "AWS S3 + MongoDB" },
+    ],
+    tags: ["WebRTC", "Socket.IO", "Redis", "Node.js", "MongoDB", "AWS S3", "Docker", "JavaScript"],
+    links: {
+      github: "https://github.com/kushal88053/videoConfrence",
+    },
+    readmeContent: {
+      overview:
+        "Video Confressing is an open-source video conference web application designed for interactive online tutoring and live team meetings, replicating core mechanisms used by Google Meet and Zoom for real-time streaming.",
+      features: [
+        { title: "Audio & Video", desc: "Real-time, peer-to-peer and SFU low-latency sharing of audio and video." },
+        { title: "Shared Whiteboard", desc: "Collaborate with participants in real-time on an interactive shared canvas." },
+        { title: "Screen Sharing", desc: "Instantly switch to presenting mode by broadcasting your desktop screen." },
+        { title: "Live Chat", desc: "Send rich messages and interact with participants in ongoing sessions." },
+        { title: "File Sharing", desc: "Upload and share relevant meeting files securely stored in AWS S3." },
+        { title: "Graph Plotter", desc: "Insert and render interactive mathematical graphs directly onto the whiteboard." },
+      ],
+      backendArchitecture: {
+        redis:
+          "Redis is used as the Socket.IO adapter for scaling and managing real-time communication. It handles state management for active users (userId, socketId, and active status) and facilitates horizontal scaling by distributing messages across multiple Node.js instances.",
+        mongodb:
+          "MongoDB is used as the primary database for user profiles, roles (admin/participant), meeting metadata, and persistent meeting chat history.",
+        s3:
+          "All files uploaded during meetings (documents, images, code files) are stored securely in an Amazon S3 bucket for high availability and fast retrieval.",
+        smtp:
+          "Meeting invitations, password resets, and participant notifications are delivered reliably via Nodemailer using SMTP.",
+        scaling:
+          "The backend supports dynamic meeting creation with unique join URLs, role-based access checks, and Redis-synchronized participant state across all server instances.",
+      },
+      runLocallyInstructions: {
+        server: "cd server\ncp integrations/.env.template integrations/.env\nnpm run infra  # Docker Compose for Redis and MongoDB\nnpm install\nnpm start",
+        frontend: "cd frontend\nnpm install\nnpm start",
+      },
+      references: [
+        { name: "Nettu Meet Repository", url: "https://github.com/fmeringdal/nettu-meet" },
+        { name: "Mediasoup Demo", url: "https://github.com/versatica/mediasoup-demo" },
+        { name: "GitHub Source Code", url: "https://github.com/kushal88053/videoConfrence" },
+      ],
+    },
+  },
+  {
     id: "ventomotors-dashboard",
     title: "VentoMotors Full-Stack IoT & Factory Platform",
     subtitle: "React.js Frontend (IndexedDB), Spring Boot APIs, ActiveMQ & Redis Pipeline",
@@ -385,7 +459,7 @@ export const formativeVideoChapters: VideoChapter[] = [
     title: "1. Engineering Overview & Core Impact",
     badge: "Kushal Patel | SDE",
     narration:
-      "Hello! I'm Kushal Patel, a Software Development Engineer specializing in high-throughput distributed systems, Java Spring Boot, Kafka, and Kubernetes. I build scalable backends that handle massive workloads with sub-second latency.",
+      "Hello! I'm Kushal Patel, a Software Development Engineer specializing in high-throughput distributed systems, real-time WebRTC platforms like VideoConfrence, Java Spring Boot, Kafka, and Kubernetes. I build scalable full-stack and backend architectures that handle massive workloads with sub-second latency.",
     visualType: "intro",
     metrics: [
       { label: "Specialty", value: "Distributed Backends" },
