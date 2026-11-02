@@ -113,3 +113,65 @@ body {
 .animate-pulse-glow {
   animation: pulseGlow 4s ease-in-out infinite;
 }
+
+
+/* Print optimization */
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  header,
+  main,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  #printable-resume-modal {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  #printable-resume-card {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #printable-resume-header {
+    display: none !important;
+  }
+
+  #printable-resume-content {
+    background: #ffffff !important;
+    color: #111827 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    font-size: 10pt !important;
+    line-height: 1.35 !important;
+  }
+
+  #printable-resume-content * {
+    color: #111827 !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  #printable-resume-content a {
+    text-decoration: underline !important;
+    color: #0284c7 !important;
+  }
+}
